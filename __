@@ -1,4 +1,3 @@
-
 vis = false
 sets = {}
 muted = {}
@@ -162,7 +161,7 @@ end
 wait(1)
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("GreenHub V4.5.8", 5013109572)
+local venyx = library.new("Green Hub V4.5.6", 5013109572)
 
 -- themes
 local themes = {
@@ -178,7 +177,7 @@ TextColor = Color3.fromRGB(255, 255, 255)
 local page = venyx:addPage("Main", 5012544693)
 local section1 = page:addSection("Visualizer")
 local section2 = page:addSection("Visualizer Settings")
-section1:addTextbox("Sound ID", "0", function(value, enterPressed)
+section1:addTextbox("ID", "0", function(value, enterPressed)
     
 if enterPressed then
 _G.id = value
@@ -236,7 +235,7 @@ venyx:Notify("Changed player", "Player set to "..value)
 end
 end)
 
-section1:addButton("Play ID", function()
+section1:addButton("Play", function()
     if vis == false then
 		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 			if v.Name == "BoomBox" then
@@ -291,7 +290,7 @@ venyx:Notify("Changed distance", "Distance set to "..value)
 end
 end)
 
-section2:addTextbox("Boombox UP/Down", "0", function(value, enterPressed)
+section2:addTextbox("Boombox Height", "0", function(value, enterPressed)
     
 if enterPressed then
 height = value
@@ -308,7 +307,7 @@ venyx:Notify("Changed speed", "Speed set to "..value)
 end
 end)
 
-section2:addTextbox("Beat up/Down", "0", function(value, enterPressed)
+section2:addTextbox("UP/Down/Beat", "0", function(value, enterPressed)
     
 if enterPressed then
 pbl.Value = value
@@ -318,8 +317,8 @@ end)
 --other vis page
 local vispage = venyx:addPage("Presets", 5012544693)
 local section4 = vispage:addSection("Presets")
-section4:addButton("Spin Boomboxes", function()
-    local waitTime = 0/0
+section4:addButton("Spiral", function()
+    local waitTime = 1/1
 	vis = true
 	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
 	game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "0"
@@ -414,9 +413,9 @@ section4:addButton("Spin Boomboxes", function()
 end)
 
 section4:addButton("Circle", function()
-    local waitTime = 0/0
+    local waitTime = 1/1
 	vis = true
-	Index = 465 / #game.Players.LocalPlayer.Backpack:GetChildren()
+	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
 	game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "0"
 	for i, v in next, getSelection() do
 		if v:IsA("Tool") then
@@ -512,7 +511,7 @@ section4:addButton("Circle", function()
     venyx:Notify("Visualizer", "Started circle visualizer")
 end)
 section4:addButton("Line", function()
-    local waitTime = 0/0
+    local waitTime = 1/1
 	vis = true
 	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
 	game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "0"
@@ -609,7 +608,7 @@ section4:addButton("Line", function()
     venyx:Notify("Visualizer", "Started line visualizer")
 end)
 section4:addButton("Line 2", function()
-    local waitTime = 0/0
+    local waitTime = 1/1
 	vis = true
 	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
 	game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "0"
@@ -706,7 +705,7 @@ section4:addButton("Line 2", function()
     venyx:Notify("Visualizer", "Started line 2 visualizer")
 end)
 section4:addButton("Orbit", function()
-    local waitTime = 0/0
+    local waitTime = 1/1
 	vis = true
 	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
 	game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "0"
@@ -803,7 +802,7 @@ section4:addButton("Orbit", function()
     venyx:Notify("Visualizer", "Started orbit visualizer")
 end)
 section4:addButton("Wave", function()
-    local waitTime = 0/0
+    local waitTime = 1/1
 	vis = true
 	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
 	game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "0"
@@ -924,6 +923,6 @@ end
 --credits page
 local credits = venyx:addPage("Credits", 5012544693)
 local creds = credits:addSection("Script Credits")
-creds:addTextbox("Made By Vastro, ty for using")
+creds:addTextbox("By Vastro, ty for using")
 -- load
 venyx:SelectPage(venyx.pages[1], true)
