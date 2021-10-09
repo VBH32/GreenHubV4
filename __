@@ -281,7 +281,7 @@ section1:addButton("Play", function()
 end)
 --vis button
 
-section2:addTextbox("Boombox Distance", "0", function(value, enterPressed)
+section2:addTextbox("Distance", "0", function(value, enterPressed)
     
 if enterPressed then
 offvalue = value
@@ -290,7 +290,7 @@ venyx:Notify("Changed distance", "Distance set to "..value)
 end
 end)
 
-section2:addTextbox("Boombox Height", "0", function(value, enterPressed)
+section2:addTextbox("Height", "0", function(value, enterPressed)
     
 if enterPressed then
 height = value
@@ -299,11 +299,11 @@ venyx:Notify("Changed height", "Height set to "..value)
 end
 end)
 
-section2:addTextbox("Boombox Speed", "0", function(value, enterPressed)
+section2:addTextbox("Speed", "0", function(value, enterPressed)
     
 if enterPressed then
 sin.Value = value
-venyx:Notify("Changed speed", "Speed set to "..value)
+venyx:Notify("Speed", "Speed set to "..value)
 end
 end)
 
@@ -317,7 +317,7 @@ end)
 --other vis page
 local vispage = venyx:addPage("Presets", 5012544693)
 local section4 = vispage:addSection("Presets")
-section4:addButton("Spiral", function()
+section4:addButton("Spin", function()
     local waitTime = 1/1
 	vis = true
 	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
@@ -704,7 +704,7 @@ section4:addButton("Line 2", function()
 	end
     venyx:Notify("Visualizer", "Started line 2 visualizer")
 end)
-section4:addButton("Orbit", function()
+section4:addButton("Circle 2", function()
     local waitTime = 1/1
 	vis = true
 	Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
